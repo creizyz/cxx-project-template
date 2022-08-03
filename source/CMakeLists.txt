@@ -1,0 +1,1 @@
+message(FATAL_ERROR "You must kickoff this project! Please refer to the readme for documentation.")

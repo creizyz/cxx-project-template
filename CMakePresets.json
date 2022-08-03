@@ -1,0 +1,30 @@
+{
+	"version": 3,
+	"cmakeMinimumRequired": {
+		"major": 3,
+		"minor": 20,
+		"patch": 0
+	},
+	"configurePresets": [
+		{
+			"name": "dependencies",
+			"hidden": true,
+			"environment": {
+				"PATH_CATCH": "$env{DEPS}/catch-2.13.8"
+			},
+			"cacheVariables": {
+				"CMAKE_PREFIX_PATH": "$env{PATH_CATCH}"
+			}
+		},
+		{
+			"name": "default",
+			"hidden": true,
+			"inherits" : [ "dependencies" ],
+      "generator" : "MinGW Makefiles",
+			"binaryDir": "${sourceDir}/build/${presetName}",
+			"cacheVariables": {
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/build/dist-${presetName}"
+			}
+		}
+	]
+}
